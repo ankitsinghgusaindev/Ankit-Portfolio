@@ -64,8 +64,8 @@ const projects = [
       "Implemented a modular component-based architecture with reusable React components, functional components, responsive layouts, and smooth section-based navigation.",
       "Built a responsive and interactive UI using CSS3 and React Icons, optimized for desktop, tablet, and mobile devices, with Vite-based development and production builds.",
     ],
-    github: "https://github.com/ankitsinghgusaindev/My-Portfolio.git",
-    live: "https://my-portfolio-six-xi-sadsoycwyl.vercel.app",
+    github: "https://github.com/ankitsinghgusaindev/Ankit-Portfolio.git",
+    live: "https://ankit-portfolio-gamma-six.vercel.app/",
   },
 
   {
