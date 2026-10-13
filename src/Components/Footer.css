@@ -1,0 +1,32 @@
+.footer { padding: 0 5% 40px; }
+
+.footer-bottom {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+
+.scroll-top {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  border-radius: 14px;
+  background: var(--grad);
+  transition: transform 0.3s var(--ease), box-shadow 0.3s;
+}
+
+.scroll-top svg { animation: bob 1.8s ease-in-out infinite; }
+.scroll-top:hover { transform: translateY(-6px); box-shadow: 0 14px 28px -8px rgba(124, 92, 255, 0.7); }
+
+@keyframes bob { 50% { transform: translateY(-3px); } }
+
+@media (max-width: 600px) { .footer-bottom { justify-content: center; text-align: center; } }

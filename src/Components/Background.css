@@ -1,0 +1,58 @@
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.45;
+  will-change: transform;
+}
+
+.blob-1 {
+  width: 560px;
+  height: 560px;
+  background: var(--rose);
+  top: -140px;
+  left: -120px;
+  animation: drift1 22s ease-in-out infinite alternate;
+}
+
+.blob-2 {
+  width: 520px;
+  height: 520px;
+  background: var(--violet);
+  top: 35%;
+  right: -160px;
+  animation: drift2 26s ease-in-out infinite alternate;
+}
+
+.blob-3 {
+  width: 440px;
+  height: 440px;
+  background: var(--cyan);
+  bottom: -160px;
+  left: 25%;
+  opacity: 0.25;
+  animation: drift3 30s ease-in-out infinite alternate;
+}
+
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 30%, #000 20%, transparent 75%);
+}
+
+@keyframes drift1 { to { transform: translate(180px, 140px) scale(1.15); } }
+@keyframes drift2 { to { transform: translate(-200px, -120px) scale(1.2); } }
+@keyframes drift3 { to { transform: translate(160px, -140px) scale(0.9); } }

@@ -1,0 +1,65 @@
+/* bento layout: 6-column grid, each category spans a different width */
+.skills-container { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; }
+
+.skill-category { padding: 26px; grid-column: span 2; }
+.skill-category:hover { transform: translateY(-6px); }
+/* order: Programming, Frontend, Backend, Database, Payments, Testing, Cloud, Practices, UI/UX, AI */
+.cat-0 { grid-column: span 2; }
+.cat-1 { grid-column: span 4; }
+.cat-2 { grid-column: span 3; }
+.cat-3 { grid-column: span 3; }
+.cat-4 { grid-column: span 2; }
+.cat-5 { grid-column: span 2; }
+.cat-6 { grid-column: span 2; }
+.cat-7 { grid-column: span 3; }
+.cat-8 { grid-column: span 3; }
+.cat-9 { grid-column: span 6; }
+
+.skill-category h3 { font-size: 1.05rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+.skill-category h3::before { content: ""; width: 26px; height: 3px; border-radius: 3px; background: var(--grad); }
+
+.skills-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.skill-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px 10px 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  font-size: 0.9rem;
+  color: var(--text-h);
+  transition: transform 0.3s var(--ease), border-color 0.3s, background 0.3s;
+  animation: float 5s ease-in-out calc(var(--i) * -0.7s) infinite;
+}
+
+.skill-card:hover { transform: translateY(-6px) scale(1.06); border-color: var(--cyan); background: rgba(34, 211, 238, 0.08); animation-play-state: paused; }
+
+.skill-icon { display: grid; place-items: center; font-size: 1.35rem; color: var(--cyan); transition: transform 0.5s var(--ease), color 0.3s; }
+.skill-card:hover .skill-icon { transform: rotate(360deg); color: var(--rose); }
+
+.currently-learning { margin-top: 50px; text-align: center; }
+.currently-learning h3 { font-size: 1.15rem; margin-bottom: 18px; }
+
+.learning-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+
+.learning-tags span {
+  position: relative;
+  padding: 10px 22px;
+  border-radius: 999px;
+  color: var(--text-h);
+  font-weight: 500;
+  background: rgba(124, 92, 255, 0.12);
+  border: 1px dashed rgba(124, 92, 255, 0.55);
+  animation: borderPulse 2.8s ease-in-out infinite;
+}
+
+.learning-tags span:nth-child(2) { animation-delay: 0.4s; }
+.learning-tags span:nth-child(3) { animation-delay: 0.8s; }
+
+@keyframes borderPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(124, 92, 255, 0.45); } 50% { box-shadow: 0 0 0 10px rgba(124, 92, 255, 0); } }
+
+@media (max-width: 900px) {
+  .skill-category { grid-column: span 6 !important; }
+}
